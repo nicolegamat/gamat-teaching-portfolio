@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicole Katherine Gamat, LPT | Teaching & Course Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- FontAwesome for extra icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-primary: #e85a88;
+            --pink-soft: #fdf0f4;
+            --pink-light: #fbcfe8;
+            --pink-dark: #be185d;
+            --green-primary: #10b981;
+            --green-dark: #047857;
+            --green-sage: #ecfdf5;
+            --green-accent: #059669;
+            --dark-text: #1f2937;
+            --muted-text: #6b7280;
+            --border-radius-lg: 18px;
+            --border-radius-md: 12px;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --card-hover-shadow: 0 18px 40px rgba(232, 90, 136, 0.15);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--dark-text);
+            background-color: #fafbfc;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Pink & Green Custom Gradient Backgrounds */
+        .bg-pink-green-glow {
+            background: radial-gradient(circle at 10% 20%, rgba(251, 207, 232, 0.35) 0%, rgba(255, 255, 255, 1) 45%),
+                        radial-gradient(circle at 90% 80%, rgba(236, 253, 245, 0.6) 0%, rgba(255, 255, 255, 1) 50%);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            padding: 0.9rem 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--pink-dark);
+        }
+        .navbar-brand span {
+            color: var(--green-accent);
+        }
+        .nav-link {
+            font-weight: 600;
+            color: #4b5563;
+            margin: 0 4px;
+            padding: 8px 14px !important;
+            border-radius: 20px;
+            transition: all 0.25s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--pink-dark);
+            background-color: var(--pink-soft);
+        }
+
+        /* Custom Buttons */
+        .btn-pink {
+            background-color: var(--pink-primary);
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 10px 24px;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 90, 136, 0.3);
+        }
+        .btn-pink:hover {
+            background-color: var(--pink-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 90, 136, 0.4);
+        }
+        .btn-green-outline {
+            border: 2px solid var(--green-accent);
+            color: var(--green-accent);
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 9px 22px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .btn-green-outline:hover {
+            background-color: var(--green-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Avatar & Badges */
+        .hero-badge {
+            background-color: var(--pink-soft);
+            color: var(--pink-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 8px 18px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--pink-light);
+        }
+        .cert-badge {
+            background-color: var(--green-sage);
+            color: var(--green-dark);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #a7f3d0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 18px 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Filter Buttons */
+        .filter-btn {
+            border: 1.5px solid #e5e7eb;
+            background-color: white;
+            color: var(--dark-text);
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 8px 20px;
+            margin: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--pink-primary);
+            color: white;
+            border-color: var(--pink-primary);
+            box-shadow: 0 4px 12px rgba(232, 90, 136, 0.25);
+        }
+
+        /* Course Cards */
+        .course-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid #f1f5f9;
+            box-shadow: var(--card-shadow);
+            transition: all 0.35s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .course-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-hover-shadow);
+            border-color: var(--pink-light);
+        }
+        .course-card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .category-pill {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .category-web { background-color: #fdf2f8; color: #db2777; }
+        .category-db { background-color: #ecfdf5; color: #059669; }
+        .category-backend { background-color: #f0fdf4; color: #166534; }
+        .category-lang { background-color: #fef2f2; color: #dc2626; }
+
+        /* Progress Bar */
+        .progress-custom {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+        .progress-bar-custom {
+            background: linear-gradient(90deg, var(--pink-primary) 0%, var(--green-accent) 100%);
+            border-radius: 10px;
+        }
+
+        .star-rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+        }
+
+        .section-title-tag {
+            color: var(--green-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* Experience Timeline */
+        .timeline-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 1.75rem;
+            border: 1px solid #f0f0f0;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .timeline-card:hover {
+            border-color: var(--pink-light);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+        .timeline-badge {
+            background-color: var(--pink-soft);
+            color: var(--pink-dark);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Icon Circles */
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .icon-pink { background-color: var(--pink-soft); color: var(--pink-dark); }
+        .icon-green { background-color: var(--green-sage); color: var(--green-accent); }
+
+        /* Search Bar Customization */
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .search-box input {
+            padding: 14px 20px 14px 48px;
+            border-radius: 30px;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            font-size: 0.95rem;
+        }
+        .search-box input:focus {
+            border-color: var(--pink-primary);
+            box-shadow: 0 0 0 4px rgba(232, 90, 136, 0.15);
+        }
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            font-size: 1.1rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom border-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <span class="p-2 rounded-circle bg-pink-soft text-pink-dark d-inline-flex align-items-center justify-content-center" style="width:38px; height:38px;">
+                    <i class="bi bi-mortarboard-fill fs-5"></i>
+                </span>
+                <span>Nicole Gamat</span>, LPT
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses Taught</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education & Certs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="https://nicolegamat.github.io/webportfolio/" target="_blank" class="btn btn-green-outline btn-sm">
+                            <i class="bi bi-github me-1"></i> Web Portfolio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-5 bg-pink-green-glow border-bottom">
+        <div class="container py-4">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="hero-badge"><i class="bi bi-patch-check-fill"></i> License for Professional Teacher (LPT)</span>
+                        <span class="cert-badge"><i class="bi bi-award-fill"></i> TESOL / TOEFL Certified</span>
+                    </div>
+
+                    <h1 class="display-5 fw-extrabold mb-3">
+                        Hi, I'm <span class="text-pink-dark">Nicole Katherine Gamat</span> 👋
+                    </h1>
+                    <h2 class="h4 text-muted fw-semibold mb-4">
+                        Full-Stack IT Instructor & English Language Educator
+                    </h2>
+                    
+                    <p class="lead text-muted fs-6 mb-4 pe-lg-4">
+                        Experienced educator with over 5 years in teaching across online bootcamps, formal classroom settings, and private tutoring. Skilled in delivering engaging tech & language curriculums, building full-stack applications, and creating inclusive learning environments.
+                    </p>
+
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <span class="text-muted small"><i class="bi bi-geo-alt-fill text-pink-dark me-1"></i> General Trias, Cavite, PH</span>
+                        <span class="text-muted small"><i class="bi bi-envelope-fill text-success me-1"></i> nicolegamat@gmail.com</span>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#courses" class="btn btn-pink">
+                            <i class="bi bi-journal-code me-2"></i>Explore Courses Taught
+                        </a>
+                        <a href="https://linkedin.com/in/nicole-gamat-a8bb991b6/" target="_blank" class="btn btn-green-outline">
+                            <i class="bi bi-linkedin me-2"></i>LinkedIn Profile
+                        </a>
+                    </div>
+
+                    <!-- Highlight Stats -->
+                    <div class="row g-3">
+                        <div class="col-4">
+                            <div class="stat-card text-center">
+                                <h3 class="fw-bold mb-0 text-pink-dark">5+</h3>
+                                <p class="small text-muted mb-0">Years Teaching</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card text-center">
+                                <h3 class="fw-bold mb-0 text-success">17</h3>
+                                <p class="small text-muted mb-0">Courses Taught</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card text-center">
+                                <h3 class="fw-bold mb-0 text-pink-dark">3-in-1</h3>
+                                <p class="small text-muted mb-0">IT, English, JPN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avatar & Visual Card -->
+                <div class="col-lg-5 text-center">
+                    <div class="card border-0 shadow-lg p-4 rounded-4 bg-white text-start">
+                        <div class="text-center mb-3">
+                            <div class="d-inline-block p-1 rounded-circle bg-gradient-pink-green mb-2" style="background: linear-gradient(135deg, var(--pink-primary), var(--green-accent));">
+                                <div class="bg-pink-soft rounded-circle d-flex align-items-center justify-content-center text-pink-dark fw-bold" style="width: 120px; height: 120px; font-size: 2.8rem;">
+                                    NG
+                                </div>
+                            </div>
+                            <h5 class="fw-bold mb-0">Nicole Katherine Gamat, LPT</h5>
+                            <p class="small text-muted mb-0">General Trias, Cavite, PH</p>
+                        </div>
+
+                        <div class="p-3 bg-light rounded-3 mb-3">
+                            <small class="text-muted d-block fw-semibold mb-1"><i class="bi bi-briefcase me-1 text-pink-dark"></i> Core Expertise</small>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge bg-white text-dark border">Full-Stack Teaching</span>
+                                <span class="badge bg-white text-dark border">Lesson Plan Dev</span>
+                                <span class="badge bg-white text-dark border">ESL & Business English</span>
+                                <span class="badge bg-white text-dark border">Graphic Design & Canva</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center justify-content-between p-2 rounded-2 border-start border-4 border-danger bg-light">
+                                <span class="small fw-semibold"><i class="bi bi-code-square me-2 text-pink-dark"></i>Node.js & HTML</span>
+                                <span class="badge bg-danger">5.0 / 5.0</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between p-2 rounded-2 border-start border-4 border-success bg-light">
+                                <span class="small fw-semibold"><i class="bi bi-translate me-2 text-success"></i>Japanese A1 / Pre-N5</span>
+                                <span class="badge bg-success">5.0 / 5.0</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between p-2 rounded-2 border-start border-4 border-primary bg-light">
+                                <span class="small fw-semibold"><i class="bi bi-chat-text me-2 text-primary"></i>English (Basic-Inter)</span>
+                                <span class="badge bg-primary">5.0 / 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-w-2xl mx-auto mb-5">
+                <span class="section-title-tag">Career Journey</span>
+                <h2 class="fw-bold display-6 mt-1">Teaching & Professional Experience</h2>
+                <p class="text-muted">A timeline of my hands-on experience in tech bootcamps, school classrooms, and private tutoring.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Experience 1: Zuitt -->
+                <div class="col-lg-12">
+                    <div class="timeline-card">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-circle icon-pink">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold mb-0">IT Instructor</h4>
+                                    <span class="text-muted fw-semibold">Zuitt | Quezon City</span>
+                                </div>
+                            </div>
+                            <span class="timeline-badge"><i class="bi bi-calendar3 me-1"></i> Nov 2023 - Sept 2026</span>
+                        </div>
+                        <ul class="text-muted small mb-0 ps-3">
+                            <li class="mb-1">Planned and delivered engaging live online coding bootcamps aligned with industry standards, accommodating diverse learning styles.</li>
+                            <li class="mb-1">Developed and implemented instruction materials for Full-Stack Web Development (HTML, CSS, JS, Node, Express, React, Vue, MongoDB, MySQL).</li>
+                            <li class="mb-1">Maintained accurate student attendance, project grades, and code reviews while providing actionable technical feedback.</li>
+                            <li>Engaged in continuous professional development, tech onboarding, and tech transfers to stay up-to-date with developer tools.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 2: Highway Hills -->
+                <div class="col-lg-6">
+                    <div class="timeline-card h-100">
+                        <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-circle icon-green">
+                                    <i class="bi bi-book"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-0">English Teacher Intern</h5>
+                                    <small class="text-muted fw-semibold">Highway Hills Integrated | Mandaluyong</small>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="badge bg-light text-dark border mb-3"><i class="bi bi-calendar3 me-1"></i> March 2023 - June 2023</span>
+                        <ul class="text-muted small mb-0 ps-3">
+                            <li class="mb-1">Taught English to Grade 8 and Grade 10 students across 4 sections, covering grammar, literature, and speech communication.</li>
+                            <li class="mb-1">Assisted in school library reading programs to promote literacy and fostered student engagement.</li>
+                            <li>Organized and co-managed the school play, guiding student performance and backstage logistics.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 3: Private Tutor -->
+                <div class="col-lg-6">
+                    <div class="timeline-card h-100">
+                        <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-circle icon-pink">
+                                    <i class="bi bi-person-hearts"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-0">Private Educator & Tutor</h5>
+                                    <small class="text-muted fw-semibold">Independent Private Tutoring</small>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="badge bg-light text-dark border mb-3"><i class="bi bi-calendar3 me-1"></i> Oct 2020 - Aug 2023</span>
+                        <ul class="text-muted small mb-0 ps-3">
+                            <li class="mb-1">Provided tailored 1-on-1 tutoring to students aged 3 to 16 in English, Mathematics, and General Science.</li>
+                            <li class="mb-1">Designed personalized lesson plans and study materials matching individual learning styles and developmental stages.</li>
+                            <li>Maintained proactive communication with parents regarding progress, academic goals, and study skills.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Course Portfolio Section -->
+    <section id="courses" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-4">
+                <span class="section-title-tag">Teaching Portfolio</span>
+                <h2 class="fw-bold display-6 mt-1">Courses Taught & Self-Confidence Ratings</h2>
+                <p class="text-muted">Explore the full catalog of courses I have taught across web engineering, software lifecycle, and language instruction.</p>
+            </div>
+
+            <!-- Search Box -->
+            <div class="mb-4">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="courseSearch" class="form-control" placeholder="Search courses (e.g., JavaScript, Japanese, Node, HTML, Mocha)...">
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="d-flex flex-wrap justify-content-center mb-5" id="filterButtons">
+                <button class="filter-btn active" data-filter="all">All Courses (17)</button>
+                <button class="filter-btn" data-filter="web">Web Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend & Testing</button>
+                <button class="filter-btn" data-filter="database">Databases & SDLC</button>
+                <button class="filter-btn" data-filter="language">Languages & ESL</button>
+            </div>
+
+            <!-- Course Cards Grid -->
+            <div class="row g-4" id="courseGrid">
+                <!-- Javascript populates cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education, Certifications & Skills Section -->
+    <section id="education" class="py-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <!-- Education & Research -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm p-4 rounded-4 h-100 bg-white">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-circle icon-pink">
+                                <i class="bi bi-bank"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-0">Education</h4>
+                                <small class="text-muted">Academic Background</small>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-pink-soft rounded-3 border border-pink-light mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="fw-bold mb-0 text-pink-dark">Bachelor of Secondary Education Major in English</h6>
+                                <span class="badge bg-white text-dark border">2020 - 2023</span>
+                            </div>
+                            <p class="small text-muted mb-2">AMA University</p>
+                            <p class="small mb-0"><strong>Research Title:</strong> <em>Language Learning Motivations and Self-Confidence as Predictors of English Language Performance Among Grade 10 Students in Donsol East District Division of Sorsogon</em></p>
+                        </div>
+
+                        <h5 class="fw-bold mt-3 mb-2 fs-6">Licenses & Certifications</h5>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center justify-content-between p-2 rounded-3 border bg-light">
+                                <span class="small fw-semibold"><i class="bi bi-patch-check-fill text-success me-2"></i>License for Professional Teacher (LPT)</span>
+                                <span class="badge bg-success">Official License</span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between p-2 rounded-3 border bg-light">
+                                <span class="small fw-semibold"><i class="bi bi-award-fill text-primary me-2"></i>TESOL / TOEFL Certificate</span>
+                                <span class="badge bg-primary">Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software & Tool Knowledge -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm p-4 rounded-4 h-100 bg-white">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-circle icon-green">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-0">Software & Core Skills</h4>
+                                <small class="text-muted">Technical & Pedagogical Tools</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="fw-bold text-muted small text-uppercase">Tech & Developer Tools</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-light text-dark p-2 border"><i class="fab me-1 fa-html5 text-danger"></i> HTML5 + CSS3</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="fab me-1 fa-bootstrap text-purple" style="color:#7952b3;"></i> Bootstrap</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="fab me-1 fa-node-js text-success"></i> Node.js + Express.js</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="fab me-1 fa-react text-info"></i> React.js</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="fab me-1 fa-vuejs text-success"></i> Vue.js</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="fas me-1 fa-database text-primary"></i> MongoDB + MySQL</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="fas me-1 fa-vial text-warning"></i> Mocha & Chai</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="fw-bold text-muted small text-uppercase">Productivity & Design Tools</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-light text-dark p-2 border"><i class="bi bi-microsoft me-1 text-primary"></i> Microsoft 365 Suite</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="bi bi-google me-1 text-danger"></i> Google Workspace</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="bi bi-palette me-1 text-pink-dark"></i> Canva</span>
+                                <span class="badge bg-light text-dark p-2 border"><i class="bi bi-share me-1 text-info"></i> Social Media Marketing</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h6 class="fw-bold text-muted small text-uppercase">Core Competencies</h6>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge bg-pink-soft text-pink-dark">Lesson Plan Development</span>
+                                <span class="badge bg-pink-soft text-pink-dark">Material Development</span>
+                                <span class="badge bg-green-sage text-success">Full-Stack Instruction</span>
+                                <span class="badge bg-green-sage text-success">Inclusive Teaching</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Contact Section -->
+    <section id="contact" class="py-5 bg-pink-green-glow border-top">
+        <div class="container py-4">
+            <div class="row gy-5">
+                <div class="col-lg-5">
+                    <span class="section-title-tag">Contact Information</span>
+                    <h2 class="fw-bold display-6 mt-1 mb-3">Get in Touch with Nicole</h2>
+                    <p class="text-muted mb-4">Interested in inviting me to teach, collaborate on instructional materials, or discuss full-stack & language education opportunities?</p>
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-circle icon-pink mb-0">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Location</small>
+                                <span class="fw-semibold">General Trias, Cavite, Philippines</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-circle icon-green mb-0">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Email Address</small>
+                                <a href="mailto:nicolegamat@gmail.com" class="text-dark fw-semibold text-decoration-none">nicolegamat@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-circle icon-pink mb-0">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Phone</small>
+                                <span class="fw-semibold">+(63) 976 513 5301</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="https://linkedin.com/in/nicole-gamat-a8bb991b6/" target="_blank" class="btn btn-outline-dark rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://nicolegamat.github.io/webportfolio/" target="_blank" class="btn btn-outline-dark rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white">
+                        <h4 class="fw-bold mb-4">Send a Direct Message</h4>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-semibold">Your Name</label>
+                                    <input type="text" class="form-control rounded-3 p-2.5" placeholder="John Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-semibold">Your Email</label>
+                                    <input type="email" class="form-control rounded-3 p-2.5" placeholder="john@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-semibold">Subject</label>
+                                    <input type="text" class="form-control rounded-3 p-2.5" placeholder="Teaching Collaboration / Course Inquiry" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-semibold">Message</label>
+                                    <textarea class="form-control rounded-3 p-2.5" rows="4" placeholder="Hello Teacher Nicole, I would like to inquire about..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-pink w-100 py-2.5">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Syllabus / Course Details -->
+    <div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="modalCourseTitle">Course Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span id="modalCategory" class="category-pill category-web">Category</span>
+                        <span id="modalRating" class="fw-bold text-success">Rating: 5/5</span>
+                    </div>
+                    <p id="modalDescription" class="text-muted">Detailed description goes here...</p>
+                    <hr>
+                    <h6 class="fw-bold mb-2">Key Teaching Highlights & Curriculum</h6>
+                    <ul id="modalTopics" class="small text-muted mb-0 ps-3">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-sm btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container text-center text-md-between d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <p class="small mb-0">&copy; 2026 Nicole Katherine Gamat, LPT. All Rights Reserved.</p>
+            <div>
+                <a href="#home" class="text-white-50 text-decoration-none small">Back to Top <i class="bi bi-arrow-up ms-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Interactive JavaScript -->
+    <script>
+        // Exact course list matching your ratings & resume experience
+        const courses = [
+            {
+                id: 'html',
+                title: 'HTML',
+                category: 'web',
+                rating: 5,
+                ratingText: '5 / 5',
+                pillClass: 'category-web',
+                categoryName: 'Web Frontend',
+                description: 'Semantic tags, DOM structure, accessibility standards (a11y), forms, media elements, and HTML5 layout best practices.',
+                topics: ['Semantic markup & page structure', 'Form validation and input attributes', 'Accessibility & SEO fundamentals']
+            },
+            {
+                id: 'node',
+                title: 'Node.JS',
+                category: 'backend',
+                rating: 5,
+                ratingText: '5 / 5',
+                pillClass: 'category-backend',
+                categoryName: 'Backend & Testing',
+                description: 'Event-driven architecture, non-blocking I/O, package management (NPM), module creation, and file system operations.',
+                topics: ['Event Loop & Async I/O', 'NPM modules & dependency management', 'Creating server-side JavaScript applications']
+            },
+            {
+                id: 'english-basic',
+                title: 'English (Basic to Intermediate)',
+                category: 'language',
+                rating: 5,
+                ratingText: '5 / 5',
+                pillClass: 'category-lang',
+                categoryName: 'Languages',
+                description: 'Grammar essentials, vocabulary expansion, sentence structure, reading comprehension, and everyday spoken fluency.',
+                topics: ['Grammar foundations & mechanics', 'Conversational practice & listening', 'Reading comprehension skills']
+            },
+            {
+                id: 'japanese-n5',
+                title: 'Japanese A1 / Pre-N5',
+                category: 'language',
+                rating: 5,
+                ratingText: '5 / 5',
+                pillClass: 'category-lang',
+                categoryName: 'Languages',
+                description: 'Hiragana & Katakana mastery, basic Kanji introduction, sentence order (SOV), daily greetings, and elementary expressions.',
+                topics: ['Hiragana & Katakana reading/writing', 'Basic grammar patterns (~desu, ~masu)', 'Essential conversational Japanese']
+            },
+            {
+                id: 'bootstrap',
+                title: 'Bootstrap',
+                category: 'web',
+                rating: 4.5,
+                ratingText: '4.5 / 5',
+                pillClass: 'category-web',
+                categoryName: 'Web Frontend',
+                description: 'Rapid UI design using 12-column grid systems, utility classes, responsive breakpoints, and pre-built components.',
+                topics: ['Grid layout & responsive breakpoints', 'Component customization (Navbars, Modals, Cards)', 'Utility-first layout building']
+            },
+            {
+                id: 'sdlc',
+                title: 'Software Development Lifecycle (SDLC)',
+                category: 'database',
+                rating: 4.5,
+                ratingText: '4.5 / 5',
+                pillClass: 'category-db',
+                categoryName: 'SDLC & Databases',
+                description: 'Agile & Scrum methodologies, Waterfall models, requirements gathering, system architecture design, and deployment.',
+                topics: ['Agile & Scrum sprint management', 'Software requirement analysis', 'Testing and maintenance phases']
+            },
+            {
+                id: 'nosql-sql',
+                title: 'NoSQL & SQL Databases (MongoDB & MySQL)',
+                category: 'database',
+                rating: 4.5,
+                ratingText: '4.5 / 5',
+                pillClass: 'category-db',
+                categoryName: 'SDLC & Databases',
+                description: 'Relational vs. Non-Relational databases, MongoDB Mongoose ODM, MySQL queries, schemas, indexing, and CRUD operations.',
+                topics: ['MongoDB collections & document schemas', 'SQL relational tables & queries', 'Database integration with Express APIs']
+            },
+            {
+                id: 'express',
+                title: 'Express.JS',
+                category: 'backend',
+                rating: 4.5,
+                ratingText: '4.5 / 5',
+                pillClass: 'category-backend',
+                categoryName: 'Backend & Testing',
+                description: 'RESTful API creation, custom middleware, URL routing, CORS management, controller structure, and backend integration.',
+                topics: ['REST API route structure', 'Custom middleware execution', 'JSON payload parsing & error handling']
+            },
+            {
+                id: 'css',
+                title: 'CSS',
+                category: 'web',
+                rating: 4,
+                ratingText: '4 / 5',
+                pillClass: 'category-web',
+                categoryName: 'Web Frontend',
+                description: 'Custom styling, Box Model, Flexbox alignment, CSS Grid, media queries, animations, transitions, and CSS variables.',
+                topics: ['Flexbox & Grid responsive design', 'Transitions & Keyframe animations', 'Custom CSS variables & theme styling']
+            },
+            {
+                id: 'javascript',
+                title: 'JavaScript',
+                category: 'web',
+                rating: 4,
+                ratingText: '4 / 5',
+                pillClass: 'category-web',
+                categoryName: 'Web Frontend',
+                description: 'Core ES6+ syntax, functions, objects, DOM manipulation, promises, async/await, array methods, and event handling.',
+                topics: ['ES6+ features (Arrow functions, Destructuring)', 'DOM events & dynamic UI manipulation', 'Asynchronous JS with Fetch API & Promises']
+            },
+            {
+                id: 'react',
+                title: 'React.JS',
+                category: 'web',
+                rating: 4,
+                ratingText: '4 / 5',
+                pillClass: 'category-web',
+                categoryName: 'Web Frontend',
+                description: 'Component architecture, JSX syntax, React Hooks (useState, useEffect), props passing, and single-page application flow.',
+                topics: ['Functional components & JSX', 'State management with Hooks', 'Props drilling & component composition']
+            },
+            {
+                id: 'vue',
+                title: 'Vue.JS',
+                category: 'web',
+                rating: 4,
+                ratingText: '4 / 5',
+                pillClass: 'category-web',
+                categoryName: 'Web Frontend',
+                description: 'Progressive JS framework, template directives (v-if, v-for, v-model), Options API & Composition API, reactivity.',
+                topics: ['Single File Components (SFC)', 'Vue Directives & Event Handling', 'Reactive state management']
+            },
+            {
+                id: 'business-english',
+                title: 'Business English',
+                category: 'language',
+                rating: 4,
+                ratingText: '4 / 5',
+                pillClass: 'category-lang',
+                categoryName: 'Languages',
+                description: 'Professional communication, business correspondence, formal email composition, meeting etiquette, and presentation skills.',
+                topics: ['Professional email & report writing', 'Meeting participation & pitching', 'Corporate vocabulary']
+            },
+            {
+                id: 'esl-english',
+                title: 'ESL English',
+                category: 'language',
+                rating: 4,
+                ratingText: '4 / 5',
+                pillClass: 'category-lang',
+                categoryName: 'Languages',
+                description: 'English as a Second Language instruction tailored for foreign learners focusing on pronunciation, listening, and immersion.',
+                topics: ['Phonics & accent neutralization', 'Immersive listening drills', 'Interactive dialogue practice']
+            },
+            {
+                id: 'mocha-chai',
+                title: 'Tester Essentials (Mocha & Chai)',
+                category: 'backend',
+                rating: 3,
+                ratingText: '3 / 5',
+                pillClass: 'category-backend',
+                categoryName: 'Backend & Testing',
+                description: 'Unit testing concepts, Mocha test runner, Chai assertion styles (expect/should), and basic API test suites.',
+                topics: ['Writing test suites & specs with Mocha', 'Chai assertion library methods', 'Unit testing functions & endpoints']
+            },
+            {
+                id: 'python',
+                title: 'Python',
+                category: 'backend',
+                rating: 3,
+                ratingText: '3 / 5',
+                pillClass: 'category-backend',
+                categoryName: 'Backend & Testing',
+                description: 'Syntax fundamentals, data structures (lists, dicts, tuples), control flow, basic object-oriented scripting.',
+                topics: ['Control flow & loop structures', 'Python functions & module imports', 'Basic OOP classes & methods']
+            },
+            {
+                id: 'java',
+                title: 'JAVA',
+                category: 'backend',
+                rating: 3,
+                ratingText: '3 / 5',
+                pillClass: 'category-backend',
+                categoryName: 'Backend & Testing',
+                description: 'Object-Oriented Programming (OOP) concepts in Java: classes, objects, inheritance, encapsulation, polymorphism.',
+                topics: ['Strongly-typed syntax & main methods', 'OOP pillars (Inheritance & Polymorphism)', 'Basic exception handling']
+            }
+        ];
+
+        // Generate Star Rating HTML
+        function generateStars(rating) {
+            let starsHTML = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '<i class="bi bi-star-fill"></i> ';
+            }
+            if (hasHalfStar) {
+                starsHTML += '<i class="bi bi-star-half"></i> ';
+            }
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                starsHTML += '<i class="bi bi-star"></i> ';
+            }
+            return starsHTML;
+        }
+
+        // Render Cards
+        function renderCourses(courseList) {
+            const courseGrid = document.getElementById('courseGrid');
+            courseGrid.innerHTML = '';
+
+            if (courseList.length === 0) {
+                courseGrid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="bi bi-search text-muted display-4"></i>
+                        <p class="mt-3 text-muted">No courses found matching your query.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            courseList.forEach(course => {
+                const percentage = (course.rating / 5) * 100;
+                const cardCol = document.createElement('div');
+                cardCol.className = 'col-md-6 col-lg-4';
+                cardCol.innerHTML = `
+                    <div class="course-card">
+                        <div class="course-card-body">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="category-pill ${course.pillClass}">${course.categoryName}</span>
+                                <span class="star-rating">${generateStars(course.rating)}</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">${course.title}</h5>
+                            <p class="text-muted small mb-3 flex-grow-1">${course.description}</p>
+                            
+                            <div class="mt-auto">
+                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <small class="fw-semibold text-muted">Confidence Rating</small>
+                                    <small class="fw-bold text-dark">${course.ratingText}</small>
+                                </div>
+                                <div class="progress progress-custom mb-3">
+                                    <div class="progress-bar progress-bar-custom" role="progressbar" style="width: ${percentage}%"></div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-secondary w-100 rounded-pill" onclick="openCourseModal('${course.id}')">
+                                    <i class="bi bi-info-circle me-1"></i> Teaching Topics
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                courseGrid.appendChild(cardCol);
+            });
+        }
+
+        // Search & Filter State
+        let currentFilter = 'all';
+        let currentSearchQuery = '';
+
+        function applyFilters() {
+            let filtered = courses;
+
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(c => c.category === currentFilter);
+            }
+
+            if (currentSearchQuery.trim() !== '') {
+                const query = currentSearchQuery.toLowerCase();
+                filtered = filtered.filter(c => 
+                    c.title.toLowerCase().includes(query) || 
+                    c.description.toLowerCase().includes(query) ||
+                    c.categoryName.toLowerCase().includes(query)
+                );
+            }
+
+            renderCourses(filtered);
+        }
+
+        // Filter Buttons Event
+        document.querySelectorAll('#filterButtons .filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('#filterButtons .filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilter = e.target.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        // Search Event
+        document.getElementById('courseSearch').addEventListener('input', (e) => {
+            currentSearchQuery = e.target.value;
+            applyFilters();
+        });
+
+        // Modal Function
+        function openCourseModal(courseId) {
+            const course = courses.find(c => c.id === courseId);
+            if (!course) return;
+
+            document.getElementById('modalCourseTitle').innerText = course.title;
+            document.getElementById('modalCategory').innerText = course.categoryName;
+            document.getElementById('modalCategory').className = `category-pill ${course.pillClass}`;
+            document.getElementById('modalRating').innerText = `Confidence Rating: ${course.ratingText}`;
+            document.getElementById('modalDescription').innerText = course.description;
+
+            const topicsList = document.getElementById('modalTopics');
+            topicsList.innerHTML = '';
+            course.topics.forEach(t => {
+                const li = document.createElement('li');
+                li.className = 'mb-1';
+                li.innerText = t;
+                topicsList.appendChild(li);
+            });
+
+            const modal = new bootstrap.Modal(document.getElementById('courseModal'));
+            modal.show();
+        }
+
+        // Form Submit Prevent
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent to Nicole Katherine Gamat, LPT.');
+            e.target.reset();
+        });
+
+        // Initialize Render
+        window.onload = function() {
+            renderCourses(courses);
+        };
+    </script>
+</body>
+</html>
